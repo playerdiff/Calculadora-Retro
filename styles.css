@@ -1,0 +1,121 @@
+body {
+    background: #5C94FC; /* Azul claro, semelhante ao céu em jogos antigos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive; /* Fonte retrô */
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%;
+    max-width: 1000px; /* Largura máxima para a container */
+    padding-left: 160px; /* Adiciona margem à esquerda para ajustar o posicionamento */
+    gap: 20px; /* Espaçamento entre o histórico e a calculadora */
+}
+
+.history {
+    width: 250px;
+    background: #F4A300; /* Cor laranja semelhante ao fundo dos jogos antigos */
+    border: 5px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Rolagem vertical se necessário */
+    height: 400px; /* Altura do histórico */
+    max-height: 400px; /* Altura máxima do histórico */
+}
+
+.history-item {
+    background: #FFF;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    text-align: right;
+}
+
+.calculator {
+    flex: 1;
+    max-width: 300px; /* Largura máxima da calculadora */
+    background: #F4A300; /* Cor laranja semelhante ao fundo dos jogos antigos */
+    border: 5px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.display {
+    background: #FFF;
+    color: #000;
+    font-size: 1.5em;
+    padding: 10px;
+    text-align: right;
+    border-bottom: 5px solid #000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    word-wrap: break-word; /* Quebra de palavras longas */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px; /* Espaçamento entre os botões */
+}
+
+.btn {
+    background: #D4AF37; /* Cor dourada dos botões */
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 50px; /* Altura consistente para os botões */
+    box-sizing: border-box; /* Inclui bordas e preenchimento na largura total */
+}
+
+.btn:hover {
+    background: #F5C518; /* Cor dourada mais clara no hover */
+}
+
+/* Estilos adicionais para responsividade */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        gap: 10px; /* Espaçamento entre o histórico e a calculadora em dispositivos menores */
+        padding-left: 0; /* Remove a margem à esquerda em dispositivos menores */
+    }
+
+    .history {
+        width: 100%;
+        max-width: 100%;
+        height: auto; /* Ajusta a altura do histórico para dispositivos menores */
+    }
+
+    .calculator {
+        max-width: 100%;
+    }
+
+    .display {
+        font-size: 1.2em; /* Ajusta o tamanho da fonte em dispositivos menores */
+    }
+
+    .btn {
+        font-size: 1em; /* Ajusta o tamanho da fonte dos botões */
+        padding: 10px; /* Ajusta o preenchimento dos botões */
+        height: 45px; /* Ajusta a altura dos botões */
+    }
+}
